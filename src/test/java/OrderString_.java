@@ -18,6 +18,11 @@ public class OrderString_ {
         assertThat(sort("sec2ond Th1s")).isEqualTo("Th1s sec2ond");
     }
 
+    @Test
+    public void order_six_word_string_should_return_the_words_sorted() {
+        assertThat(sort("4of Fo1r pe6ople g3ood th5e the2")).isEqualTo("Fo1r the2 g3ood 4of th5e pe6ople");
+    }
+
     private String sort(String phrase) {
         return phraseBuilder(phrase.split(" "), getPositionOfWordsSorted(phrase.split(" ")));
     }
