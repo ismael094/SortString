@@ -10,6 +10,6 @@ public class OrderString_ {
     }
 
     private String sort(String phrase) {
-        return null;
+        return "";
     }
 }
