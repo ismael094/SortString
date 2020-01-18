@@ -9,6 +9,11 @@ public class OrderString_ {
         assertThat(sort("")).isEqualTo("");
     }
 
+    @Test
+    public void order_a_word_string_should_return_the_same() {
+        assertThat(sort("Th1s")).isEqualTo("Th1s");
+    }
+
     private String sort(String phrase) {
         return "";
     }
