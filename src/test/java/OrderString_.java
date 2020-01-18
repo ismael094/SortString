@@ -14,6 +14,11 @@ public class OrderString_ {
         assertThat(sort("Th1s")).isEqualTo("Th1s");
     }
 
+    @Test
+    public void order_two_word_string_should_return_the_words_sorted() {
+        assertThat(sort("sec2ond Th1s")).isEqualTo("Th1s sec2ond");
+    }
+
     private String sort(String phrase) {
         return phrase;
     }
