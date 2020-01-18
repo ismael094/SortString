@@ -1,7 +1,5 @@
 import org.junit.Test;
 
-import java.util.Arrays;
-
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class OrderString_ {
@@ -21,25 +19,26 @@ public class OrderString_ {
     }
 
     private String sort(String phrase) {
-        String[] words = phrase.split(" ");
-        int[] positions = getPositions(words);
+        return phraseBuilder(phrase.split(" "), getPositionOfWordsSorted(phrase.split(" ")));
+    }
+
+    private String phraseBuilder(String[] words, int[] positions) {
         String res = "";
-        for (int i = 0 ;i<words.length;i++) {
-            res += words[positions[i]]+" ";
+        for (int position : positions) {
+            res += words[position]+" ";
         }
         return res.trim();
     }
 
-    private int[] getPositions(String[] words) {
+    private int[] getPositionOfWordsSorted(String[] words) {
         int[] positions = new int[words.length];
         for (int i = 0; i<words.length;i++) {
-            positions[i] = getNumOfWord(words[i]);
+            positions[i] = getNumberInWord(words[i]);
         }
-
         return positions;
     }
 
-    private int getNumOfWord(String word) {
+    private int getNumberInWord(String word) {
         for (int i = 1; i<=9; i++)
             if (word.contains(i+""))
                 return i-1;
