@@ -15,6 +15,6 @@ public class OrderString_ {
     }
 
     private String sort(String phrase) {
-        return "";
+        return phrase;
     }
 }
